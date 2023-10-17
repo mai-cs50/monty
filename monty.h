@@ -39,4 +39,15 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern stack_t *head;
+typedef void (*op_func) (stack_t **, unsigned int);
 
+void open_file(char *file_name);
+int parse_line(char *buffer, int line_number, int format);
+void read_file(FILE *);
+int len_chars(FILE *);
+void find_func(char *, char *, int, int);
+
+stack_t *create_node(int n);
+void free_nodes(void);
+void print_stack(stack_t)
