@@ -67,7 +67,7 @@ void more_err(int error_code, ...)
 		case 8:
 			l_num = va_arg(ag, unsigned int);
 			op = va_arg(ag, char *);
-			fprintf(stderr, "L%d: cian't %s, stack too short\n", l_num op);
+			fprintf(stderr, "L%d: cian't %s, stack too short\n", l_num, op);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",
