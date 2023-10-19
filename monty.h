@@ -59,7 +59,7 @@ void call_fun(op_func, char *, char *, int, int);
 void print_top(stack_t **, unsigned int);
 void pop_top(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
-void swap_nodes(stack_t, unsigned int);
+void swap_nodes(stack_t **, unsigned int);
 
 void add_nodes(stack_t **, unsigned int);
 void sub_nodes(stack_t **, unsigned int);

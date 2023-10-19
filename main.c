@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
  *
  *
 */
-stack_t *creat_node(int n)
+stack_t *create_node(int n)
 {
 	stack_t *node;
 
@@ -31,7 +31,7 @@ stack_t *creat_node(int n)
 	if (node == NULL)
 		err(4);
 	node->next = NULL;
-	node_prev = NULL;
+	node->prev = NULL;
 	node->n = n;
 	return (node);
 }

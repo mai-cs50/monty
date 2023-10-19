@@ -29,7 +29,7 @@ void err(int error_code, ...)
 			fprintf(stderr, "L%d: unknown instruction %s\n", l_num, op);
 			break;
 		case 4:
-			fprintf(stderr, "Error malloc failed\n");
+			fprintf(stderr, "Error: malloc failed\n");
 			break;
 		case 5:
 			fprintf(stderr, "L%d: usage: push integer\n", va_arg(ag, int));
@@ -58,20 +58,20 @@ void more_err(int error_code, ...)
 	{
 		case 6:
 			fprintf(stderr, "L%d: can't pint, stack empty\n",
-					va_arg(ag, int));
+				va_arg(ag, int));
 			break;
 		case 7:
 			fprintf(stderr, "L%d: can't pop an empty stack\n",
-					va_arg(ag, int));
+				va_arg(ag, int));
 			break;
 		case 8:
 			l_num = va_arg(ag, unsigned int);
 			op = va_arg(ag, char *);
-			fprintf(stderr, "L%d: can't %s stack so short\n", l_num op);
+			fprintf(stderr, "L%d: cian't %s, stack too short\n", l_num op);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",
-					va_arg(ag, unsigned int));
+				va_arg(ag, unsigned int));
 			break;
 		default:
 			break;

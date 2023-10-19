@@ -45,9 +45,9 @@ void read_file(FILE *fd)
 int parse_line(char *buffer, int line_number, int format)
 {
 	char *opcode, *value;
-	const char *delim = "\n";
+	const char *delim = "\n ";
 
-	if (bufer == NULL)
+	if (buffer == NULL)
 		err(4);
 
 	opcode = strtok(buffer, delim);
@@ -55,9 +55,9 @@ int parse_line(char *buffer, int line_number, int format)
 		return (format);
 	value = strtok(NULL, delim);
 
-	if (strcmp(opcode, "stack" == 0))
+	if (strcmp(opcode, "stack") == 0)
 		return (0);
-	if (strcmp(opcode, "queue" == 0))
+	if (strcmp(opcode, "queue") == 0)
 		return (1);
 
 	find_func(opcode, value, line_number, format);
@@ -78,7 +78,7 @@ void find_func(char *opcode, char *value, int ln, int format)
 	instruction_t func_list[] = {
 		{"push", add_to_stack},
 		{"pall", print_stack},
-		{"print", print_top},
+		{"pint", print_top},
 		{"pop", pop_top},
 		{"nop", nop},
 		{"swap", swap_nodes},
@@ -128,19 +128,19 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 			flag = -1;
 		}
 
-	if (val == NULL)
-		err(5, ln);
-	for (i = 0; val[i] != '\n'; i++)
-	{
-		if (isdigit(val[i]) == 0)
+		if (val == NULL)
 			err(5, ln);
-	}
-	node = creat_node(atoi(val) * flag);
-	if (format == 0)
-		func(&node, ln);
-	if (format == 1)
-		add_to_queue(&node, ln);
-	}
-	else
-		func(&head, ln);
+		for (i = 0; val[i] != '\n'; i++)
+		{
+			if (isdigit(val[i]) == 0)
+				err(5, ln);
+		}
+		node = creat_node(atoi(val) * flag);
+		if (format == 0)
+			func(&node, ln);
+		if (format == 1)
+			add_to_queue(&node, ln);
+		}
+		else
+			func(&head, ln);
 }
