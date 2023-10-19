@@ -131,12 +131,12 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 
 		if (val == NULL)
 			err(5, ln);
-		for (i = 0; val[i] != '\n'; i++)
+		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
 				err(5, ln);
 		}
-		node = creat_node(atoi(val) * flag);
+		node = create_node(atoi(val) * flag);
 		if (format == 0)
 			func(&node, ln);
 		if (format == 1)
