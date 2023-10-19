@@ -120,6 +120,7 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 	int i;
 
 	flag = 1;
+
 	if (strcmp(op, "push") == 0)
 	{
 		if (val != NULL && val[0] == '-')
@@ -140,7 +141,7 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 			func(&node, ln);
 		if (format == 1)
 			add_to_queue(&node, ln);
-		}
-		else
-			func(&head, ln);
+	}
+	else
+		func(&head, ln);
 }
