@@ -124,7 +124,7 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 	{
 		if (val != NULL && val[0] == '-')
 		{
-			val = val = 1;
+			val = val + 1;
 			flag = -1;
 		}
 

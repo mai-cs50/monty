@@ -20,8 +20,8 @@ void err(int error_code, ...)
 			fprintf(stderr, "USAGE: monty file\n");
 			break;
 		case 2:
-			fprintf(stderr, "Error: Cant open file %s\n",
-					va_arg(ag, char *));
+			fprintf(stderr, "Error: Can't open file %s\n",
+				va_arg(ag, char *));
 			break;
 		case 3:
 			l_num = va_arg(ag, int);
@@ -57,17 +57,17 @@ void more_err(int error_code, ...)
 	switch (error_code)
 	{
 		case 6:
-			fprintf(stderr, "L%d: cant pint, stack empty\n",
+			fprintf(stderr, "L%d: can't pint, stack empty\n",
 					va_arg(ag, int));
 			break;
 		case 7:
-			fprintf(stderr, "L%d: cant pop an empty stack\n",
+			fprintf(stderr, "L%d: can't pop an empty stack\n",
 					va_arg(ag, int));
 			break;
 		case 8:
 			l_num = va_arg(ag, unsigned int);
 			op = va_arg(ag, char *);
-			fprintf(stderr, "L%d: cant %s stack so short\n", l_num op);
+			fprintf(stderr, "L%d: can't %s stack so short\n", l_num op);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",
@@ -97,10 +97,10 @@ void string_err(int error_code, ...)
 	switch (error_code)
 	{
 		case 10:
-			fprintf(stderr, "L%d: cant pchar, value out of range\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
 			break;
 		case 11:
-			fprintf(stderr, "L%d: cant pchar, stack empty\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, stack empty\n", l_num);
 			break;
 		default:
 			break;
